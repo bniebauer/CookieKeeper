@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3200A21425C7024300F0D78D /* DBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200A21325C7024300F0D78D /* DBController.swift */; };
 		3200A21725C7869600F0D78D /* CustomerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200A21625C7869600F0D78D /* CustomerExtension.swift */; };
+		3200A21A25C78A6A00F0D78D /* FileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200A21925C78A6A00F0D78D /* FileDataManager.swift */; };
 		32928B6625C43FD400228A4E /* CookieKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B6525C43FD400228A4E /* CookieKeeperApp.swift */; };
 		32928B6825C43FD400228A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B6725C43FD400228A4E /* ContentView.swift */; };
 		32928B6A25C43FD700228A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32928B6925C43FD700228A4E /* Assets.xcassets */; };
@@ -22,11 +23,13 @@
 		32928B8E25C45A6000228A4E /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B8D25C45A6000228A4E /* OrderDetails.swift */; };
 		32928B9125C46C0A00228A4E /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B9025C46C0A00228A4E /* OrderListView.swift */; };
 		32928B9425C4702D00228A4E /* OrderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B9325C4702D00228A4E /* OrderRowView.swift */; };
+		32D2125525C8793A003A91D9 /* CustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2125425C8793A003A91D9 /* CustomerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3200A21325C7024300F0D78D /* DBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBController.swift; sourceTree = "<group>"; };
 		3200A21625C7869600F0D78D /* CustomerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerExtension.swift; sourceTree = "<group>"; };
+		3200A21925C78A6A00F0D78D /* FileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataManager.swift; sourceTree = "<group>"; };
 		32928B6225C43FD400228A4E /* CookieKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32928B6525C43FD400228A4E /* CookieKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieKeeperApp.swift; sourceTree = "<group>"; };
 		32928B6725C43FD400228A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		32928B8D25C45A6000228A4E /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		32928B9025C46C0A00228A4E /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		32928B9325C4702D00228A4E /* OrderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRowView.swift; sourceTree = "<group>"; };
+		32D2125425C8793A003A91D9 /* CustomerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				3200A21325C7024300F0D78D /* DBController.swift */,
+				3200A21925C78A6A00F0D78D /* FileDataManager.swift */,
+				32D2125425C8793A003A91D9 /* CustomerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32928B7625C43FF700228A4E /* Customer.swift in Sources */,
+				3200A21A25C78A6A00F0D78D /* FileDataManager.swift in Sources */,
 				32928B7A25C4405200228A4E /* Cookie.swift in Sources */,
 				32928B8B25C44D7000228A4E /* CustomerListView.swift in Sources */,
 				32928B7E25C440CC00228A4E /* Order.swift in Sources */,
@@ -232,6 +239,7 @@
 				32928B6625C43FD400228A4E /* CookieKeeperApp.swift in Sources */,
 				3200A21425C7024300F0D78D /* DBController.swift in Sources */,
 				3200A21725C7869600F0D78D /* CustomerExtension.swift in Sources */,
+				32D2125525C8793A003A91D9 /* CustomerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

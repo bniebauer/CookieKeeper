@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomerListView: View {
     @Binding var customers: [Customer]
+    @State private var isPresented = false
+    @State private var data: Customer = Customer()
     var body: some View {
         NavigationView {
             List {
@@ -22,9 +24,25 @@ struct CustomerListView: View {
                 }
             }
             .navigationBarTitle("List of Customers")
-            .navigationBarItems(trailing: Button(action: {}){
+            .navigationBarItems(trailing: Button(action: {
+                isPresented = true
+                data = Customer()
+            }, label: {
                 Image(systemName: "plus")
-            })
+            }))
+            .fullScreenCover(isPresented: $isPresented) {
+                NavigationView {
+                    CustomerEntry(customer: $data)
+                        .navigationTitle("New Customer")
+                        .navigationBarItems(leading: Button("Cancel") {
+                            isPresented = false
+                        }, trailing: Button("Done") {
+                            let newCustomer = Customer(id: customers.count+1, firstName: data.firstName, lastName: data.lastName, street: "", city: "", state: "", zip: "", phoneNumber: data.phoneNumber, email: data.email)
+                            customers.append(newCustomer)
+                            isPresented = false
+                        })
+                }
+            }
         }
     }
     

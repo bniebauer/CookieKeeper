@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var customers: [Customer]
     var body: some View {
         TabView {
-            CustomerTab()
+            CustomerTab(customers: $customers)
                 .tabItem {
                     Image(systemName: "info.circle")
                     Text("Customers")
@@ -25,7 +26,7 @@ struct ContentView: View {
 }
 
 struct CustomerTab: View {
-    @State var customers: [Customer] = Customer.testCollection
+    @Binding var customers: [Customer]
     var body: some View {
         CustomerListView(customers: $customers)
     }
@@ -39,7 +40,8 @@ struct OrdersTab: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let customer = Customer.testCollection
     static var previews: some View {
-        ContentView()
+        ContentView(customers: .constant(customer))
     }
 }
