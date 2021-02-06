@@ -8,8 +8,9 @@
 import Foundation
 import SQLite3
 
-struct Customer: Codable, Identifiable, Equatable {
-    var id: Int = 1
+struct Customer: Codable, Identifiable, Equatable, Hashable, CustomStringConvertible {
+    
+    var id: Int = 0
     var firstName: String = ""
     var lastName: String = ""
     var street: String = ""
@@ -18,6 +19,10 @@ struct Customer: Codable, Identifiable, Equatable {
     var zip: String = ""
     var phoneNumber: String = ""
     var email: String = ""
+    
+    var description: String {
+        return "\(self.firstName) \(self.lastName)"
+    }
 
 }
 

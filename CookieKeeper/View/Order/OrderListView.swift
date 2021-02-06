@@ -9,6 +9,9 @@ import SwiftUI
 
 struct OrderListView: View {
     @Binding var orders: [Order]
+    @Binding var customers: [Customer]
+    @State var isPresented = false
+    @State var newOrder = Order()
     var body: some View {
         NavigationView {
             List {
@@ -19,9 +22,24 @@ struct OrderListView: View {
                 }
             }
             .navigationTitle("Order List")
-            .navigationBarItems(trailing: Button(action: {}) {
+            .navigationBarItems(trailing: Button(action: {
+                isPresented = true
+            }) {
                 Image(systemName: "plus")
             })
+            .fullScreenCover(isPresented: $isPresented) {
+                NavigationView {
+                    OrderEditView(order: $newOrder, customers: $customers)
+                        .navigationTitle("New Order")
+                        .navigationBarItems(leading: Button("Cancel") {
+                            isPresented = false
+                        }, trailing: Button("Done") {
+                            // create new order object
+                            // append to order array
+                            isPresented = false
+                        })
+                }
+            }
         }
     }
     
@@ -35,6 +53,7 @@ struct OrderListView: View {
 
 struct OrderListView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderListView(orders: .constant(Order.testOrderCollection))
+        OrderListView(orders: .constant(Order.testOrderCollection),
+                      customers: .constant(Customer.testCollection))
     }
 }

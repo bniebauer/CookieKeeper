@@ -8,12 +8,12 @@
 import Foundation
 
 struct Order: Codable, Identifiable {
-    var id: Int
-    var customer: Customer
-    var selection: [Cookie]
-    var payment: PaymentType
-    var paid: Bool
-    var delivered: Bool
+    var id: Int = 0
+    var customer: Customer = Customer()
+    var selection: [Cookie] = []
+    var payment: PaymentType = .Cash
+    var paid: Bool = false
+    var delivered: Bool = false
     
     var total: Double {
         var tally: Double = 0
@@ -23,9 +23,9 @@ struct Order: Codable, Identifiable {
         return tally
     }
     
-    enum PaymentType: String, Codable {
-        case Cash = "case"
-        case Check = "check"
+    enum PaymentType: String, CaseIterable, Codable {
+        case Cash = "Cash"
+        case Check = "Check"
     }
 }
 

@@ -36,14 +36,15 @@ struct OrderDetails: View {
                         Text("Paid:")
                         Button(action: {}, label: {
                             Image(systemName: (order.paid ? "checkmark.circle.fill": "checkmark.circle"))
-                        })
+                        }).buttonStyle(PlainButtonStyle())
                     }
                     Spacer()
                     HStack {
                         Text("Delivered:")
                         Button(action: {}, label: {
                             Image(systemName: (order.delivered ? "checkmark.circle.fill": "checkmark.circle"))
-                        })
+                        }).buttonStyle(PlainButtonStyle())
+                        
                     }
                 }
             }

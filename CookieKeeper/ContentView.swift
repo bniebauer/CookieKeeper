@@ -16,7 +16,7 @@ struct ContentView: View {
                     Image(systemName: "info.circle")
                     Text("Customers")
                 }
-            OrdersTab()
+            OrdersTab(customers: $customers)
                 .tabItem {
                     Image(systemName: "shippingbox.fill")
                     Text("Orders")
@@ -33,9 +33,10 @@ struct CustomerTab: View {
 }
 
 struct OrdersTab: View {
+    @Binding var customers: [Customer]
     @State var orders: [Order] = Order.testOrderCollection
     var body: some View {
-        OrderListView(orders: $orders)
+        OrderListView(orders: $orders, customers: $customers)
     }
 }
 
