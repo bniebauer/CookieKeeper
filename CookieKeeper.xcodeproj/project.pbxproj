@@ -10,6 +10,19 @@
 		3200A21425C7024300F0D78D /* DBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200A21325C7024300F0D78D /* DBController.swift */; };
 		3200A21725C7869600F0D78D /* CustomerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200A21625C7869600F0D78D /* CustomerExtension.swift */; };
 		3200A21A25C78A6A00F0D78D /* FileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200A21925C78A6A00F0D78D /* FileDataManager.swift */; };
+		321BAA9A25CD85380028B539 /* CookieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321BAA9925CD85380028B539 /* CookieRowView.swift */; };
+		323F619225F9655F0073DC62 /* cookies.json in Resources */ = {isa = PBXBuildFile; fileRef = 323F619125F9655F0073DC62 /* cookies.json */; };
+		323F619725F96CD40073DC62 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F619625F96CD40073DC62 /* Helper.swift */; };
+		327AD0A125CEFBBD000C7E80 /* CookieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327AD0A025CEFBBD000C7E80 /* CookieListView.swift */; };
+		32886AED25CE109E00B0AF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32886AEC25CE109E00B0AF8E /* Assets.xcassets */; };
+		32886AF425CE109E00B0AF8E /* WatchCookieKeeper Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 32886AF325CE109E00B0AF8E /* WatchCookieKeeper Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		32886AFB25CE109E00B0AF8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32886AFA25CE109E00B0AF8E /* ContentView.swift */; };
+		32886AFD25CE109E00B0AF8E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32886AFC25CE109E00B0AF8E /* NotificationController.swift */; };
+		32886AFF25CE109E00B0AF8E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32886AFE25CE109E00B0AF8E /* NotificationView.swift */; };
+		32886B0125CE109E00B0AF8E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32886B0025CE109E00B0AF8E /* ComplicationController.swift */; };
+		32886B0325CE109F00B0AF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32886B0225CE109F00B0AF8E /* Assets.xcassets */; };
+		32886B0625CE109F00B0AF8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32886B0525CE109F00B0AF8E /* Preview Assets.xcassets */; };
+		32886B0B25CE109F00B0AF8E /* WatchCookieKeeper.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 32886AEA25CE109C00B0AF8E /* WatchCookieKeeper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		32928B6625C43FD400228A4E /* CookieKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B6525C43FD400228A4E /* CookieKeeperApp.swift */; };
 		32928B6825C43FD400228A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B6725C43FD400228A4E /* ContentView.swift */; };
 		32928B6A25C43FD700228A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32928B6925C43FD700228A4E /* Assets.xcassets */; };
@@ -23,13 +36,73 @@
 		32928B8E25C45A6000228A4E /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B8D25C45A6000228A4E /* OrderDetails.swift */; };
 		32928B9125C46C0A00228A4E /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B9025C46C0A00228A4E /* OrderListView.swift */; };
 		32928B9425C4702D00228A4E /* OrderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32928B9325C4702D00228A4E /* OrderRowView.swift */; };
+		32A0DBDF25F5A2A200B772C0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A0DBDE25F5A2A200B772C0 /* DataController.swift */; };
 		32D2125525C8793A003A91D9 /* CustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2125425C8793A003A91D9 /* CustomerController.swift */; };
+		32D2125A25C8BB41003A91D9 /* OrderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2125925C8BB41003A91D9 /* OrderEditView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32886AF525CE109E00B0AF8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32928B5A25C43FD400228A4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32886AF225CE109E00B0AF8E;
+			remoteInfo = "WatchCookieKeeper Extension";
+		};
+		32886B0925CE109F00B0AF8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32928B5A25C43FD400228A4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32886AE925CE109C00B0AF8E;
+			remoteInfo = WatchCookieKeeper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		32886B0C25CE109F00B0AF8E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				32886B0B25CE109F00B0AF8E /* WatchCookieKeeper.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32886B0F25CE109F00B0AF8E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				32886AF425CE109E00B0AF8E /* WatchCookieKeeper Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3200A21325C7024300F0D78D /* DBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBController.swift; sourceTree = "<group>"; };
 		3200A21625C7869600F0D78D /* CustomerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerExtension.swift; sourceTree = "<group>"; };
 		3200A21925C78A6A00F0D78D /* FileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataManager.swift; sourceTree = "<group>"; };
+		321BAA9925CD85380028B539 /* CookieRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieRowView.swift; sourceTree = "<group>"; };
+		323F619125F9655F0073DC62 /* cookies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cookies.json; sourceTree = "<group>"; };
+		323F619625F96CD40073DC62 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		327AD0A025CEFBBD000C7E80 /* CookieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieListView.swift; sourceTree = "<group>"; };
+		32886AEA25CE109C00B0AF8E /* WatchCookieKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchCookieKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32886AEC25CE109E00B0AF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32886AEE25CE109E00B0AF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32886AF325CE109E00B0AF8E /* WatchCookieKeeper Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchCookieKeeper Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32886AFA25CE109E00B0AF8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32886AFC25CE109E00B0AF8E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		32886AFE25CE109E00B0AF8E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		32886B0025CE109E00B0AF8E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		32886B0225CE109F00B0AF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32886B0525CE109F00B0AF8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		32886B0725CE109F00B0AF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32886B0825CE109F00B0AF8E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		32928B6225C43FD400228A4E /* CookieKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32928B6525C43FD400228A4E /* CookieKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieKeeperApp.swift; sourceTree = "<group>"; };
 		32928B6725C43FD400228A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,10 +118,19 @@
 		32928B8D25C45A6000228A4E /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		32928B9025C46C0A00228A4E /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		32928B9325C4702D00228A4E /* OrderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRowView.swift; sourceTree = "<group>"; };
+		32A0DBDE25F5A2A200B772C0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		32D2125425C8793A003A91D9 /* CustomerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerController.swift; sourceTree = "<group>"; };
+		32D2125925C8BB41003A91D9 /* OrderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		32886AF025CE109E00B0AF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32928B5F25C43FD400228A4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,20 +141,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3200A21225C7022F00F0D78D /* Controller */ = {
+		32886AEB25CE109C00B0AF8E /* WatchCookieKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				3200A21325C7024300F0D78D /* DBController.swift */,
-				3200A21925C78A6A00F0D78D /* FileDataManager.swift */,
-				32D2125425C8793A003A91D9 /* CustomerController.swift */,
+				32886AEC25CE109E00B0AF8E /* Assets.xcassets */,
+				32886AEE25CE109E00B0AF8E /* Info.plist */,
 			);
-			path = Controller;
+			path = WatchCookieKeeper;
+			sourceTree = "<group>";
+		};
+		32886AF725CE109E00B0AF8E /* WatchCookieKeeper Extension */ = {
+			isa = PBXGroup;
+			children = (
+				32886AFA25CE109E00B0AF8E /* ContentView.swift */,
+				32886AFC25CE109E00B0AF8E /* NotificationController.swift */,
+				32886AFE25CE109E00B0AF8E /* NotificationView.swift */,
+				32886B0025CE109E00B0AF8E /* ComplicationController.swift */,
+				32886B0225CE109F00B0AF8E /* Assets.xcassets */,
+				32886B0725CE109F00B0AF8E /* Info.plist */,
+				32886B0825CE109F00B0AF8E /* PushNotificationPayload.apns */,
+				32886B0425CE109F00B0AF8E /* Preview Content */,
+			);
+			path = "WatchCookieKeeper Extension";
+			sourceTree = "<group>";
+		};
+		32886B0425CE109F00B0AF8E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				32886B0525CE109F00B0AF8E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		32928B5925C43FD400228A4E = {
 			isa = PBXGroup;
 			children = (
 				32928B6425C43FD400228A4E /* CookieKeeper */,
+				32886AEB25CE109C00B0AF8E /* WatchCookieKeeper */,
+				32886AF725CE109E00B0AF8E /* WatchCookieKeeper Extension */,
 				32928B6325C43FD400228A4E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				32928B6225C43FD400228A4E /* CookieKeeper.app */,
+				32886AEA25CE109C00B0AF8E /* WatchCookieKeeper.app */,
+				32886AF325CE109E00B0AF8E /* WatchCookieKeeper Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,9 +196,25 @@
 		32928B6425C43FD400228A4E /* CookieKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				3200A21225C7022F00F0D78D /* Controller */,
-				32928B8025C4425100228A4E /* View */,
-				32928B7825C4403F00228A4E /* Model */,
+				323F619625F96CD40073DC62 /* Helper.swift */,
+				32928B7925C4405200228A4E /* Cookie.swift */,
+				323F619125F9655F0073DC62 /* cookies.json */,
+				32928B7D25C440CC00228A4E /* Order.swift */,
+				3200A21925C78A6A00F0D78D /* FileDataManager.swift */,
+				3200A21325C7024300F0D78D /* DBController.swift */,
+				32D2125425C8793A003A91D9 /* CustomerController.swift */,
+				32928B8D25C45A6000228A4E /* OrderDetails.swift */,
+				32928B9025C46C0A00228A4E /* OrderListView.swift */,
+				32928B9325C4702D00228A4E /* OrderRowView.swift */,
+				32D2125925C8BB41003A91D9 /* OrderEditView.swift */,
+				321BAA9925CD85380028B539 /* CookieRowView.swift */,
+				327AD0A025CEFBBD000C7E80 /* CookieListView.swift */,
+				32928B8425C4429700228A4E /* CustomerEntry.swift */,
+				32928B8725C447AA00228A4E /* CustomerRowView.swift */,
+				32928B8A25C44D7000228A4E /* CustomerListView.swift */,
+				32928B7525C43FF700228A4E /* Customer.swift */,
+				3200A21625C7869600F0D78D /* CustomerExtension.swift */,
+				32A0DBDE25F5A2A200B772C0 /* DataController.swift */,
 				32928B6525C43FD400228A4E /* CookieKeeperApp.swift */,
 				32928B6725C43FD400228A4E /* ContentView.swift */,
 				32928B6925C43FD700228A4E /* Assets.xcassets */,
@@ -108,57 +232,43 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		32928B7825C4403F00228A4E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				32928B7525C43FF700228A4E /* Customer.swift */,
-				32928B7925C4405200228A4E /* Cookie.swift */,
-				32928B7D25C440CC00228A4E /* Order.swift */,
-				3200A21625C7869600F0D78D /* CustomerExtension.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		32928B8025C4425100228A4E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				32928B8325C4427400228A4E /* Order */,
-				32928B8225C4426B00228A4E /* Cookie */,
-				32928B8125C4426200228A4E /* Customer */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		32928B8125C4426200228A4E /* Customer */ = {
-			isa = PBXGroup;
-			children = (
-				32928B8425C4429700228A4E /* CustomerEntry.swift */,
-				32928B8725C447AA00228A4E /* CustomerRowView.swift */,
-				32928B8A25C44D7000228A4E /* CustomerListView.swift */,
-			);
-			path = Customer;
-			sourceTree = "<group>";
-		};
-		32928B8225C4426B00228A4E /* Cookie */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cookie;
-			sourceTree = "<group>";
-		};
-		32928B8325C4427400228A4E /* Order */ = {
-			isa = PBXGroup;
-			children = (
-				32928B8D25C45A6000228A4E /* OrderDetails.swift */,
-				32928B9025C46C0A00228A4E /* OrderListView.swift */,
-				32928B9325C4702D00228A4E /* OrderRowView.swift */,
-			);
-			path = Order;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		32886AE925CE109C00B0AF8E /* WatchCookieKeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32886B1325CE109F00B0AF8E /* Build configuration list for PBXNativeTarget "WatchCookieKeeper" */;
+			buildPhases = (
+				32886AE825CE109C00B0AF8E /* Resources */,
+				32886B0F25CE109F00B0AF8E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32886AF625CE109E00B0AF8E /* PBXTargetDependency */,
+			);
+			name = WatchCookieKeeper;
+			productName = WatchCookieKeeper;
+			productReference = 32886AEA25CE109C00B0AF8E /* WatchCookieKeeper.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		32886AF225CE109E00B0AF8E /* WatchCookieKeeper Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32886B1225CE109F00B0AF8E /* Build configuration list for PBXNativeTarget "WatchCookieKeeper Extension" */;
+			buildPhases = (
+				32886AEF25CE109E00B0AF8E /* Sources */,
+				32886AF025CE109E00B0AF8E /* Frameworks */,
+				32886AF125CE109E00B0AF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchCookieKeeper Extension";
+			productName = "WatchCookieKeeper Extension";
+			productReference = 32886AF325CE109E00B0AF8E /* WatchCookieKeeper Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		32928B6125C43FD400228A4E /* CookieKeeper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32928B7125C43FD700228A4E /* Build configuration list for PBXNativeTarget "CookieKeeper" */;
@@ -166,10 +276,12 @@
 				32928B5E25C43FD400228A4E /* Sources */,
 				32928B5F25C43FD400228A4E /* Frameworks */,
 				32928B6025C43FD400228A4E /* Resources */,
+				32886B0C25CE109F00B0AF8E /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				32886B0A25CE109F00B0AF8E /* PBXTargetDependency */,
 			);
 			name = CookieKeeper;
 			productName = CookieKeeper;
@@ -185,6 +297,12 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					32886AE925CE109C00B0AF8E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					32886AF225CE109E00B0AF8E = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					32928B6125C43FD400228A4E = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -204,48 +322,185 @@
 			projectRoot = "";
 			targets = (
 				32928B6125C43FD400228A4E /* CookieKeeper */,
+				32886AE925CE109C00B0AF8E /* WatchCookieKeeper */,
+				32886AF225CE109E00B0AF8E /* WatchCookieKeeper Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		32886AE825CE109C00B0AF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32886AED25CE109E00B0AF8E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32886AF125CE109E00B0AF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32886B0625CE109F00B0AF8E /* Preview Assets.xcassets in Resources */,
+				32886B0325CE109F00B0AF8E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32928B6025C43FD400228A4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				32928B6D25C43FD700228A4E /* Preview Assets.xcassets in Resources */,
 				32928B6A25C43FD700228A4E /* Assets.xcassets in Resources */,
+				323F619225F9655F0073DC62 /* cookies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		32886AEF25CE109E00B0AF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32886AFD25CE109E00B0AF8E /* NotificationController.swift in Sources */,
+				32886AFB25CE109E00B0AF8E /* ContentView.swift in Sources */,
+				32886B0125CE109E00B0AF8E /* ComplicationController.swift in Sources */,
+				32886AFF25CE109E00B0AF8E /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32928B5E25C43FD400228A4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				32928B7625C43FF700228A4E /* Customer.swift in Sources */,
 				3200A21A25C78A6A00F0D78D /* FileDataManager.swift in Sources */,
+				327AD0A125CEFBBD000C7E80 /* CookieListView.swift in Sources */,
 				32928B7A25C4405200228A4E /* Cookie.swift in Sources */,
 				32928B8B25C44D7000228A4E /* CustomerListView.swift in Sources */,
 				32928B7E25C440CC00228A4E /* Order.swift in Sources */,
 				32928B6825C43FD400228A4E /* ContentView.swift in Sources */,
+				323F619725F96CD40073DC62 /* Helper.swift in Sources */,
 				32928B9125C46C0A00228A4E /* OrderListView.swift in Sources */,
 				32928B8825C447AA00228A4E /* CustomerRowView.swift in Sources */,
 				32928B9425C4702D00228A4E /* OrderRowView.swift in Sources */,
+				32A0DBDF25F5A2A200B772C0 /* DataController.swift in Sources */,
 				32928B8525C4429700228A4E /* CustomerEntry.swift in Sources */,
 				32928B8E25C45A6000228A4E /* OrderDetails.swift in Sources */,
+				32D2125A25C8BB41003A91D9 /* OrderEditView.swift in Sources */,
 				32928B6625C43FD400228A4E /* CookieKeeperApp.swift in Sources */,
 				3200A21425C7024300F0D78D /* DBController.swift in Sources */,
 				3200A21725C7869600F0D78D /* CustomerExtension.swift in Sources */,
 				32D2125525C8793A003A91D9 /* CustomerController.swift in Sources */,
+				321BAA9A25CD85380028B539 /* CookieRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		32886AF625CE109E00B0AF8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32886AF225CE109E00B0AF8E /* WatchCookieKeeper Extension */;
+			targetProxy = 32886AF525CE109E00B0AF8E /* PBXContainerItemProxy */;
+		};
+		32886B0A25CE109F00B0AF8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32886AE925CE109C00B0AF8E /* WatchCookieKeeper */;
+			targetProxy = 32886B0925CE109F00B0AF8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		32886B0D25CE109F00B0AF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87W34RA6G8;
+				IBSC_MODULE = WatchCookieKeeper_Extension;
+				INFOPLIST_FILE = WatchCookieKeeper/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.CookieKeeper.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		32886B0E25CE109F00B0AF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87W34RA6G8;
+				IBSC_MODULE = WatchCookieKeeper_Extension;
+				INFOPLIST_FILE = WatchCookieKeeper/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.CookieKeeper.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		32886B1025CE109F00B0AF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchCookieKeeper Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 87W34RA6G8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WatchCookieKeeper Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.CookieKeeper.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		32886B1125CE109F00B0AF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchCookieKeeper Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 87W34RA6G8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WatchCookieKeeper Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.niebauer.CookieKeeper.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
 		32928B6F25C43FD700228A4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,6 +664,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		32886B1225CE109F00B0AF8E /* Build configuration list for PBXNativeTarget "WatchCookieKeeper Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32886B1025CE109F00B0AF8E /* Debug */,
+				32886B1125CE109F00B0AF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32886B1325CE109F00B0AF8E /* Build configuration list for PBXNativeTarget "WatchCookieKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32886B0D25CE109F00B0AF8E /* Debug */,
+				32886B0E25CE109F00B0AF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		32928B5D25C43FD400228A4E /* Build configuration list for PBXProject "CookieKeeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

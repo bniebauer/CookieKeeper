@@ -1,0 +1,50 @@
+[
+    {
+            "id": "EF1CC5BB-4785-4D8E-AB98-5FA4E00B6A66",
+            "name": "Thin Mints",
+            "description": "Delicious mint and chocolate",
+            "price": 5
+        },
+        {
+            "id": "EDCD038C-036F-4C40-826F-61C88CD84DDD",
+            "name": "Trefoils",
+            "description": "Traditional shortbread cookies",
+            "price": 5
+        },
+        {
+            "id": "36A7CC40-18C1-48E5-BCD8-3B42D43BEAEE",
+            "name": "Tagalong",
+            "description": "Layered with peanut butter and covered with a chocolate coating.",
+            "price": 5
+        },
+        {
+            "id": "CFB8C2DB-3478-4A10-92FA-3D2A2D5324FB",
+            "name": "Samoas",
+            "description": "Crisp cookie with caramel, coconut, and dark chocolate.",
+            "price": 5
+        },
+        {
+            "id": "8903A204-F5C1-4D5C-A0A1-5C0ECD27FDD7",
+            "name": "Do-Si-Dos",
+            "description": "Oatmeal sandwich with peanut butter.",
+            "price": 5
+        },
+        {
+            "id": "82B28AFF-BB29-4186-AA07-04959180D81A",
+            "name": "Lemon-ups",
+            "description": "Crispy lemo cookies baked with inspiring message.",
+            "price": 5
+        },
+        {
+            "id": "190E1A9D-20A4-4F98-AA54-B192E1C4D7B9",
+            "name": "S'mores",
+            "description": "Graham sandwich cookies with chocolate and marshmallow filling.",
+            "price": 5
+        },
+        {
+            "id": "3D97FAB4-50AC-40FC-9BF0-3F46BB6A92F5",
+            "name": "Toffee-tastic",
+            "description": "Rich, buttery cookie with sweet, crunchy toffee. Gluten Free.",
+            "price": 5
+        }
+]
