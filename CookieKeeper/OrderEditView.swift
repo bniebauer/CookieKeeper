@@ -52,7 +52,10 @@ struct OrderEditView: View {
                 isShowing = false
             }, trailing: Button("Done") {
                 // create new order object
+                newOrder.customer = selectedCustomer
+                newOrder.payment = selectedPayment
                 
+                dataController.orders.append(newOrder)
                 // append to order array
                 isShowing = false
             })

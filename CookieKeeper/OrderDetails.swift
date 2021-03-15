@@ -10,7 +10,9 @@ import SwiftUI
 struct OrderDetails: View {
     @EnvironmentObject var dataController: DataController
     @Binding var order: Order
+    @State var isPaid = false
     let cookies = Bundle.main.decode([Cookie].self, from: "cookies.json")
+    
     var body: some View {
         List {
             VStack  (alignment: .leading){
@@ -36,7 +38,11 @@ struct OrderDetails: View {
                 HStack {
                     HStack {
                         Text("Paid:")
-                        Button(action: {}, label: {
+                        Button(action: {
+                            print("clicked")
+                            isPaid = !order.paid
+                            order.paid = isPaid
+                        }, label: {
                             Image(systemName: (order.paid ? "checkmark.circle.fill": "checkmark.circle"))
                         }).buttonStyle(PlainButtonStyle())
                     }
