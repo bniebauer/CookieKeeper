@@ -16,7 +16,7 @@ struct ContentView: View {
                     Image(systemName: "info.circle")
                     Text("Customers")
                 }
-            OrderListView()
+            OrderListView(orders: $dataController.orders)
                 .tabItem {
                     Image(systemName: "shippingbox.fill")
                     Text("Orders")
@@ -28,6 +28,13 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static let customer = Customer.testCollection
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .environmentObject(DataController())
+            
+            ContentView()
+                .environmentObject(DataController())
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

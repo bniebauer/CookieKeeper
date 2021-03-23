@@ -11,9 +11,8 @@ struct OrderEditView: View {
     @EnvironmentObject var dataController: DataController
     @State var selectedPayment = Order.PaymentType.Cash
     @State var selectedCustomer: Customer = Customer()
-    @Binding var newOrder: Order
+    @State var newOrder = Order()
     @Binding var isShowing: Bool
-    let cookies = Bundle.main.decode([Cookie].self, from: "cookies.json")
     var body: some View {
         NavigationView {
             List {
@@ -26,7 +25,7 @@ struct OrderEditView: View {
                 }
                 Section(header: Text("Cookie")) {
                     NavigationLink(
-                        destination: CookieListView(),
+                        destination: CookieListView(CookieSelection: $newOrder.selection),
                         label: {
                             Text("Cookie Selection")
                     })
@@ -40,7 +39,7 @@ struct OrderEditView: View {
                 HStack {
                     Text("Amount Due:")
                     Spacer()
-                    Text("$\(String(format: "%.2f",newOrder.getTotal(cookies: cookies)))")
+                    Text("$\(String(format: "%.2f",newOrder.total))")
                 }
                 Picker("Payment Method", selection: $selectedPayment) {
                     Text("Cash").tag(Order.PaymentType.Cash)
@@ -67,7 +66,7 @@ struct OrderEditView: View {
 struct OrderEditView_Previews: PreviewProvider {
     static var testOrder = Order.testOrder
     static var previews: some View {
-        OrderEditView(newOrder: .constant(testOrder), isShowing: .constant(true))
+        OrderEditView(isShowing: .constant(true))
             .environmentObject(DataController())
     }
 }

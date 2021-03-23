@@ -13,6 +13,7 @@
 		321BAA9A25CD85380028B539 /* CookieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321BAA9925CD85380028B539 /* CookieRowView.swift */; };
 		323F619225F9655F0073DC62 /* cookies.json in Resources */ = {isa = PBXBuildFile; fileRef = 323F619125F9655F0073DC62 /* cookies.json */; };
 		323F619725F96CD40073DC62 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F619625F96CD40073DC62 /* Helper.swift */; };
+		32646337260130F400890475 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32646336260130F400890475 /* OrderController.swift */; };
 		327AD0A125CEFBBD000C7E80 /* CookieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327AD0A025CEFBBD000C7E80 /* CookieListView.swift */; };
 		32886AED25CE109E00B0AF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32886AEC25CE109E00B0AF8E /* Assets.xcassets */; };
 		32886AF425CE109E00B0AF8E /* WatchCookieKeeper Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 32886AF325CE109E00B0AF8E /* WatchCookieKeeper Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -90,6 +91,7 @@
 		321BAA9925CD85380028B539 /* CookieRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieRowView.swift; sourceTree = "<group>"; };
 		323F619125F9655F0073DC62 /* cookies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cookies.json; sourceTree = "<group>"; };
 		323F619625F96CD40073DC62 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		32646336260130F400890475 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		327AD0A025CEFBBD000C7E80 /* CookieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieListView.swift; sourceTree = "<group>"; };
 		32886AEA25CE109C00B0AF8E /* WatchCookieKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchCookieKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32886AEC25CE109E00B0AF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				32928B6925C43FD700228A4E /* Assets.xcassets */,
 				32928B6E25C43FD700228A4E /* Info.plist */,
 				32928B6B25C43FD700228A4E /* Preview Content */,
+				32646336260130F400890475 /* OrderController.swift */,
 			);
 			path = CookieKeeper;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				32928B7A25C4405200228A4E /* Cookie.swift in Sources */,
 				32928B8B25C44D7000228A4E /* CustomerListView.swift in Sources */,
 				32928B7E25C440CC00228A4E /* Order.swift in Sources */,
+				32646337260130F400890475 /* OrderController.swift in Sources */,
 				32928B6825C43FD400228A4E /* ContentView.swift in Sources */,
 				323F619725F96CD40073DC62 /* Helper.swift in Sources */,
 				32928B9125C46C0A00228A4E /* OrderListView.swift in Sources */,

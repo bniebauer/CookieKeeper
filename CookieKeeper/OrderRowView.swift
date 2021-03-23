@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct OrderRowView: View {
-    let order: Order
-    let cookies: [Cookie]
+    @Binding var order: Order
     var body: some View {
         HStack {
             Text(order.customer.lastName)
             Spacer()
-            Text("Total: $\(String(format: "%.2f", order.getTotal(cookies: cookies)))")
+            Text("Total: $\(String(format: "%.2f", order.total))")
             Spacer()
             Text("Paid: \(Image(systemName: (order.paid ? "checkmark.circle.fill" : "checkmark.circle")))")
         }.background(order.delivered ? Color.orange : Color.white)
@@ -24,6 +23,6 @@ struct OrderRowView: View {
 
 struct OrderRowView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderRowView(order: Order.testOrder, cookies: [Cookie]())
+        OrderRowView(order: .constant(Order.testOrder))
     }
 }

@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct OrderListView: View {
-    @EnvironmentObject var dataController: DataController
     @State var isPresented = false
-    @State var newOrder = Order()
+    @Binding var orders: [Order]
     
-    let cookies = Bundle.main.decode([Cookie].self, from: "cookies.json")
     var body: some View {
         NavigationView {
             List {
-                ForEach(dataController.orders) { order in
+                ForEach(orders) { order in
                     NavigationLink(destination: OrderDetails(order: binding(for: order))) {
-                        OrderRowView(order: order, cookies: cookies)
+                        OrderRowView(order: binding(for: order))
                     }
-                }
+                }.onDelete(perform: deleteOrder)
             }
             .navigationTitle("Order List")
             .toolbar {
@@ -33,22 +31,25 @@ struct OrderListView: View {
                 }
             }
             .fullScreenCover(isPresented: $isPresented) {
-                OrderEditView(newOrder: $newOrder, isShowing: $isPresented)
+                OrderEditView(isShowing: $isPresented)
             }
         }
     }
     
     private func binding(for order: Order) -> Binding<Order> {
-        guard let orderIndex = dataController.orders.firstIndex(where: {$0.id == order.id }) else {
+        guard let orderIndex = orders.firstIndex(where: {$0.id == order.id }) else {
             fatalError("Could not find order in collection")
         }
-        return $dataController.orders[orderIndex]
+        return $orders[orderIndex]
+    }
+    
+    private func deleteOrder(at offset: IndexSet) {
+        orders.remove(atOffsets: offset)
     }
 }
 
 struct OrderListView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderListView()
-            .environmentObject(DataController())
+        OrderListView(orders: .constant([Order]()))
     }
 }

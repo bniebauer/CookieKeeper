@@ -11,10 +11,11 @@ import SQLite3
 class Order: Identifiable, Codable {
     var id: UUID
     var customer: Customer
-    var selection: [UUID:Int] = [UUID:Int]()
+    var selection: [String:Int] = [String:Int]()
     var payment: PaymentType = .Cash
     var paid: Bool = false
     var delivered: Bool = false
+    var total: Int = 0
     
     init() {
         self.id = UUID()
@@ -32,16 +33,6 @@ class Order: Identifiable, Codable {
     enum PaymentType: String, CaseIterable, Codable {
         case Cash = "Cash"
         case Check = "Check"
-    }
-    
-    func getTotal(cookies: [Cookie]) -> Int {
-        var total = 0
-        selection.forEach { (cookieID, numOfBoxes) in
-            if let cookie = cookies.first(where: {$0.id == cookieID}) {
-                total += cookie.price * numOfBoxes
-            }
-        }
-        return total
     }
 }
 
