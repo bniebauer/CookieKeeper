@@ -13,7 +13,7 @@ struct OrderRowView: View {
         HStack {
             Text(order.customer.lastName)
             Spacer()
-            Text("Total: $\(String(format: "%.2f", order.total))")
+            Text("Total: $\(order.total)")
             Spacer()
             Text("Paid: \(Image(systemName: (order.paid ? "checkmark.circle.fill" : "checkmark.circle")))")
         }.background(order.delivered ? Color.orange : Color.white)

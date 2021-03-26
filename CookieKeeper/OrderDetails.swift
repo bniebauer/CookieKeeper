@@ -33,8 +33,8 @@ struct OrderDetails: View {
                         }
                     }
                 }
-                Text("Total: $\(String(format: "%.2f", order.getTotal(cookies: cookies)))")
-                Text("Number of boxes: \(order.selection.count)")
+                Text("Total: $\( order.total)")
+                Text("Number of boxes: \(order.totalBoxes)")
                 HStack {
                     HStack {
                         Text("Paid:")

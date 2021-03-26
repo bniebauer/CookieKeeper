@@ -9,15 +9,15 @@ import SwiftUI
 
 struct OrderEditView: View {
     @EnvironmentObject var dataController: DataController
-    @State var selectedPayment = Order.PaymentType.Cash
-    @State var selectedCustomer: Customer = Customer()
-    @State var newOrder = Order()
+    @ObservedObject var newOrder = Order()
     @Binding var isShowing: Bool
+    let cookies = Bundle.main.decode([Cookie].self, from: "cookies.json")
+    
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Customer")) {
-                    Picker("Customer", selection: $selectedCustomer) {
+                    Picker("Customer", selection: $newOrder.customer) {
                         ForEach(0..<dataController.customers.count) {
                             Text("\(dataController.customers[$0].description)").tag(dataController.customers[$0])
                         }
@@ -25,10 +25,12 @@ struct OrderEditView: View {
                 }
                 Section(header: Text("Cookie")) {
                     NavigationLink(
-                        destination: CookieListView(CookieSelection: $newOrder.selection),
+                        destination: CookieListView(CookieSelection: $newOrder.selection, PriceTotal: $newOrder.total, cookies: cookies),
                         label: {
                             Text("Cookie Selection")
-                    })
+                        }
+                    )
+                    // Add a button to test the value of total
                 }
                 
                 HStack {
@@ -39,9 +41,9 @@ struct OrderEditView: View {
                 HStack {
                     Text("Amount Due:")
                     Spacer()
-                    Text("$\(String(format: "%.2f",newOrder.total))")
+                    Text("$\(newOrder.getTotal(cookies))")
                 }
-                Picker("Payment Method", selection: $selectedPayment) {
+                Picker("Payment Method", selection: $newOrder.payment) {
                     Text("Cash").tag(Order.PaymentType.Cash)
                     Text("Check").tag(Order.PaymentType.Check)
                 }
@@ -50,12 +52,8 @@ struct OrderEditView: View {
             .navigationBarItems(leading: Button("Cancel") {
                 isShowing = false
             }, trailing: Button("Done") {
-                // create new order object
-                newOrder.customer = selectedCustomer
-                newOrder.payment = selectedPayment
-                
+                newOrder.total = newOrder.getTotal(cookies)
                 dataController.orders.append(newOrder)
-                // append to order array
                 isShowing = false
             })
         }

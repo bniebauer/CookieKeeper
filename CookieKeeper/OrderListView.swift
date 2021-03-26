@@ -14,9 +14,9 @@ struct OrderListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(orders) { order in
-                    NavigationLink(destination: OrderDetails(order: binding(for: order))) {
-                        OrderRowView(order: binding(for: order))
+                ForEach(orders.indices, id: \.self) { index in
+                    NavigationLink(destination: OrderDetails(order: $orders[index])) {
+                        OrderRowView(order: $orders[index])
                     }
                 }.onDelete(perform: deleteOrder)
             }
@@ -34,13 +34,6 @@ struct OrderListView: View {
                 OrderEditView(isShowing: $isPresented)
             }
         }
-    }
-    
-    private func binding(for order: Order) -> Binding<Order> {
-        guard let orderIndex = orders.firstIndex(where: {$0.id == order.id }) else {
-            fatalError("Could not find order in collection")
-        }
-        return $orders[orderIndex]
     }
     
     private func deleteOrder(at offset: IndexSet) {
