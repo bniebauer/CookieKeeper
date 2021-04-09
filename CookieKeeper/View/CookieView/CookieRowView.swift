@@ -26,7 +26,7 @@ struct CookieRowView: View {
                     Text(cookie.name)
                         .font(.title)
                     
-                    Text("($\(String(format: "%.2f", cookie.price)) per box)").font(.footnote)
+                    Text("($\(cookie.price) per box)").font(.footnote)
                 }
                     Text(cookie.description)
                         .font(.subheadline)
