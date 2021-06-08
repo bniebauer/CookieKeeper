@@ -9,6 +9,8 @@ import Foundation
 import SQLite3
 
 extension Customer {
+    static let dbController = DbController()
+    
     func Save() -> Bool {
         var saveResult = false
         if self.id > 0 {

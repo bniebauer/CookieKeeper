@@ -23,9 +23,9 @@ struct OrderEditView: View {
                         }
                     }
                 }
-                Section(header: Text("Cookie")) {
+               Section(header: Text("Cookie")) {
                     NavigationLink(
-                        destination: CookieListView(CookieSelection: $newOrder.selection, PriceTotal: $newOrder.total, cookies: cookies),
+                        destination: CookieListView(cookies: cookies, CookieSelection: $newOrder.selection ),
                         label: {
                             Text("Cookie Selection")
                         }

@@ -11,6 +11,7 @@ protocol HandleFileData {
     static func SaveToFile(DataList: [Any])
     static func LoadFromFile() -> [Any]
 }
+
 class FileDataManager {
     
     static func GetArchiveURL(For fileName: String) -> URL {

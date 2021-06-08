@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomerRowView: View {
-    let customer: Customer
+    @Binding var customer: Customer
     var body: some View {
         HStack {
             Image(systemName: "person.fill")
@@ -30,7 +30,7 @@ struct CustomerRowView: View {
 struct CustomerRowView_Previews: PreviewProvider {
     static var testCustomerCurrent: Customer = Customer(id: 2, firstName: "Brenton", lastName: "Niebauer", phoneNumber: "724-316-5569", email: "b.niebauer@me.com")
     static var previews: some View {
-        CustomerRowView(customer: testCustomerCurrent)
+        CustomerRowView(customer: .constant(testCustomerCurrent))
             .previewLayout(.fixed(width: 320, height: 60))
     }
 }

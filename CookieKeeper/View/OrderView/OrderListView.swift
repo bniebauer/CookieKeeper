@@ -9,18 +9,25 @@ import SwiftUI
 
 struct OrderListView: View {
     @State var isPresented = false
-    @Binding var orders: [Order]
+    @State var orders: [Order]
+    
+    init() {
+        // Get Order Data
+        self.orders = Order.testOrderCollection
+    }
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(orders.indices, id: \.self) { index in
-                    NavigationLink(destination: OrderDetails(order: $orders[index])) {
+                    let order = $orders[index]
+                    
+                    NavigationLink(destination: OrderDetails(order: order, isPaid: order.paid, isDelivered: order.delivered)) {
                         OrderRowView(order: $orders[index])
                     }
                 }.onDelete(perform: deleteOrder)
             }
-            .navigationTitle("Order List")
+            .navigationTitle("Orders")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
@@ -43,6 +50,6 @@ struct OrderListView: View {
 
 struct OrderListView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderListView(orders: .constant([Order]()))
+        OrderListView()
     }
 }

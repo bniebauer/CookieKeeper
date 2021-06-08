@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CookieRowView: View {
     let cookie: Cookie
-    @State var numOfBoxes: Int
-    var updateTotal : (Int, String) -> Void
+    @Binding var numOfBoxes: Int
     var total: Int {
         return numOfBoxes * cookie.price
     }
@@ -35,7 +34,7 @@ struct CookieRowView: View {
                     Stepper(
                         onIncrement: onAddBoxes,
                         onDecrement: onRemoveBoxes) {
-                        Text("\(numOfBoxes != nil ? numOfBoxes : 0) Boxes")
+                        Text("\(numOfBoxes) Boxes")
                     }
                 }
             }
@@ -44,7 +43,7 @@ struct CookieRowView: View {
     
     func onAddBoxes() {
         numOfBoxes += 1
-        updateTotal(numOfBoxes, cookie.name)
+        //updateTotal(numOfBoxes, cookie.name)
         // Increase selection
     }
     
@@ -58,9 +57,6 @@ struct CookieRowView: View {
 
 struct CookieRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CookieRowView(cookie: Cookie.cookieTest, numOfBoxes: 0, updateTotal: { (numberOfBoxes, ID) in
-            print(numberOfBoxes)
-            print(ID)
-        })
+        CookieRowView(cookie: Cookie.cookieTest, numOfBoxes: .constant(0))
     }
 }

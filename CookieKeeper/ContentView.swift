@@ -11,15 +11,15 @@ struct ContentView: View {
     @EnvironmentObject var dataController: DataController
     var body: some View {
         TabView {
+            OrderListView()
+                .tabItem {
+                    Image(systemName: "shippingbox.fill")
+                    Text("Orders")
+                }
             CustomerListView()
                 .tabItem {
                     Image(systemName: "info.circle")
                     Text("Customers")
-                }
-            OrderListView(orders: $dataController.orders)
-                .tabItem {
-                    Image(systemName: "shippingbox.fill")
-                    Text("Orders")
                 }
         }
     }

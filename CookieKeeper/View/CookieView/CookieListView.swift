@@ -8,33 +8,28 @@
 import SwiftUI
 
 struct CookieListView: View {
-    @Binding var CookieSelection: [String:Int]
-    @Binding var PriceTotal: Int
     let cookies: [Cookie]
+    @Binding var CookieSelection: [String:Int]
+    
     var body: some View {
         List {
-            ForEach(cookies.indices) { index in
-                CookieRowView(cookie: cookies[index], numOfBoxes: getSelectedNumberOf(Cookie: cookies[index]), updateTotal: updateTotal)
+            ForEach(cookies.indices, id: \.self) { index in
+                let cookie = cookies[index]
+                let numOfBoxes = Binding(get: {
+                    return CookieSelection[cookie.name] ?? 0
+                }, set: {
+                    CookieSelection[cookie.name] = $0
+                })
+                CookieRowView(cookie: cookie, numOfBoxes: numOfBoxes)
             }
         }
-    }
-    
-    func updateTotal(numOfBoxes: Int, CookieID: String){
-        CookieSelection[CookieID] = numOfBoxes
-        if let cookie = cookies.first(where: {$0.name == CookieID}) {
-            PriceTotal += cookie.price * numOfBoxes
-        }
-    }
-    
-    func getSelectedNumberOf(Cookie: Cookie) -> Int {
-        guard let numberOfBoxes = CookieSelection[Cookie.name] else { return 0 }
-        return numberOfBoxes
     }
 }
 
 struct CookieListView_Previews: PreviewProvider {
     static var previews: some View {
-        CookieListView(CookieSelection: .constant([String:Int]()), PriceTotal: .constant(0), cookies: [Cookie]())
+        let cookieArray = [Cookie.cookieTest.name: 2]
+        CookieListView(cookies: [Cookie.cookieTest, Cookie.cookieTest], CookieSelection: .constant(cookieArray))
             .environmentObject(DataController())
             
     }

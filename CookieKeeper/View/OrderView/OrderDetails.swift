@@ -10,8 +10,9 @@ import SwiftUI
 struct OrderDetails: View {
     @EnvironmentObject var dataController: DataController
     @Binding var order: Order
-    @State var isPaid = false
-    @State var isDelivered = false
+    @Binding var isPaid: Bool
+    @Binding var isDelivered: Bool
+    
     let cookies = Bundle.main.decode([Cookie].self, from: "cookies.json")
     
     var body: some View {
@@ -40,23 +41,19 @@ struct OrderDetails: View {
                     HStack {
                         HStack {
                             Text("Paid:")
-                            Button(action: {
-                                print("clicked")
-                                isPaid = !order.paid
-                                order.paid = isPaid
-                            }, label: {
-                                Image(systemName: (order.paid ? "checkmark.circle.fill": "checkmark.circle"))
-                            }).buttonStyle(PlainButtonStyle())
+                            Image(systemName: (isPaid ? "checkmark.circle.fill": "checkmark.circle")).buttonStyle(PlainButtonStyle())
+                                .onTapGesture {
+                                    self.isPaid.toggle()
+                                }
                         }
                         Spacer()
                         HStack {
                             Text("Delivered:")
-                            Button(action: {
-                                isDelivered = !order.delivered
-                                order.delivered = isDelivered
-                            }, label: {
-                                Image(systemName: (order.delivered ? "checkmark.circle.fill": "checkmark.circle"))
-                            }).buttonStyle(PlainButtonStyle())
+                            Image(systemName: (isDelivered ? "checkmark.circle.fill": "checkmark.circle"))
+                            .buttonStyle(PlainButtonStyle())
+                                .onTapGesture {
+                                    isDelivered.toggle()
+                                }
                             
                         }
                     }
@@ -65,7 +62,14 @@ struct OrderDetails: View {
             }
             Section {
                 ForEach(order.selection.sorted(by: >), id: \.key) { key, value in
-                    CookieRowView(cookie: cookies.first(where: { $0.name == key})!, numOfBoxes: value, updateTotal: {_,_ in (()-> Void).self})
+                    let cookie = cookies.first(where: { $0.name == key})!
+                    let numOfBoxes = Binding(get: {
+                        return self.order.selection[key] ?? 0
+                    }, set: {
+                        self.order.selection[key] = $0
+                    })
+                
+                    CookieRowView(cookie: cookie, numOfBoxes: numOfBoxes)
                 }
             }
                 NavigationLink(
@@ -75,7 +79,7 @@ struct OrderDetails: View {
                     })
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationTitle("Order #\(order.id)")
+        .navigationTitle("Order: \(order.customer.lastName)")
         .navigationBarItems(trailing: Button("Edit"){
             
         })
@@ -86,13 +90,14 @@ struct OrderDetails: View {
 struct OrderDetails_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            OrderDetails(order: .constant(Order.testOrder))
+            OrderDetails(order: .constant(Order.testOrder), isPaid: .constant(Order.testOrder.paid), isDelivered: .constant(Order.testOrder.delivered))
                 .environmentObject(DataController())
                 .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro"))
+                .previewDisplayName("iPhone 12 Pro")
         }
         
         NavigationView {
-            OrderDetails(order: .constant(Order.testOrder))
+            OrderDetails(order: .constant(Order.testOrder), isPaid: .constant(Order.testOrder.paid), isDelivered: .constant(Order.testOrder.delivered))
                 .environmentObject(DataController())
                 .previewDevice(PreviewDevice(rawValue: "iPad Air (4th generation)"))
                 .previewDisplayName("iPad Air")
