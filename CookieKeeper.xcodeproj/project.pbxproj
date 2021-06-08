@@ -13,6 +13,8 @@
 		321BAA9A25CD85380028B539 /* CookieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321BAA9925CD85380028B539 /* CookieRowView.swift */; };
 		323F619225F9655F0073DC62 /* cookies.json in Resources */ = {isa = PBXBuildFile; fileRef = 323F619125F9655F0073DC62 /* cookies.json */; };
 		323F619725F96CD40073DC62 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F619625F96CD40073DC62 /* Helper.swift */; };
+		3245DF30261E43F700810E6A /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245DF2F261E43F700810E6A /* PDFCreator.swift */; };
+		3245DF35261E450000810E6A /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3245DF34261E450000810E6A /* PDFView.swift */; };
 		32646337260130F400890475 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32646336260130F400890475 /* OrderController.swift */; };
 		327AD0A125CEFBBD000C7E80 /* CookieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327AD0A025CEFBBD000C7E80 /* CookieListView.swift */; };
 		32886AED25CE109E00B0AF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32886AEC25CE109E00B0AF8E /* Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		321BAA9925CD85380028B539 /* CookieRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieRowView.swift; sourceTree = "<group>"; };
 		323F619125F9655F0073DC62 /* cookies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cookies.json; sourceTree = "<group>"; };
 		323F619625F96CD40073DC62 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		3245DF2F261E43F700810E6A /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		3245DF34261E450000810E6A /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
 		32646336260130F400890475 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		327AD0A025CEFBBD000C7E80 /* CookieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieListView.swift; sourceTree = "<group>"; };
 		32886AEA25CE109C00B0AF8E /* WatchCookieKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchCookieKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +147,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32312FC42620D98400462A67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3200A21625C7869600F0D78D /* CustomerExtension.swift */,
+				32928B7925C4405200228A4E /* Cookie.swift */,
+				32928B7D25C440CC00228A4E /* Order.swift */,
+				32928B7525C43FF700228A4E /* Customer.swift */,
+				3245DF2F261E43F700810E6A /* PDFCreator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32312FCB2620D9EB00462A67 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				32A0DBDE25F5A2A200B772C0 /* DataController.swift */,
+				32646336260130F400890475 /* OrderController.swift */,
+				32D2125425C8793A003A91D9 /* CustomerController.swift */,
+				3200A21325C7024300F0D78D /* DBController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		32312FD22620DA3200462A67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3245DF34261E450000810E6A /* PDFView.swift */,
+				32312FD82620DA8900462A67 /* CustomerView */,
+				32312FD42620DA5700462A67 /* OrderView */,
+				32312FD32620DA3C00462A67 /* CookieView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32312FD32620DA3C00462A67 /* CookieView */ = {
+			isa = PBXGroup;
+			children = (
+				327AD0A025CEFBBD000C7E80 /* CookieListView.swift */,
+				321BAA9925CD85380028B539 /* CookieRowView.swift */,
+			);
+			path = CookieView;
+			sourceTree = "<group>";
+		};
+		32312FD42620DA5700462A67 /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				32928B8D25C45A6000228A4E /* OrderDetails.swift */,
+				32928B9025C46C0A00228A4E /* OrderListView.swift */,
+				32928B9325C4702D00228A4E /* OrderRowView.swift */,
+				32D2125925C8BB41003A91D9 /* OrderEditView.swift */,
+			);
+			path = OrderView;
+			sourceTree = "<group>";
+		};
+		32312FD82620DA8900462A67 /* CustomerView */ = {
+			isa = PBXGroup;
+			children = (
+				32928B8A25C44D7000228A4E /* CustomerListView.swift */,
+				32928B8425C4429700228A4E /* CustomerEntry.swift */,
+				32928B8725C447AA00228A4E /* CustomerRowView.swift */,
+			);
+			path = CustomerView;
+			sourceTree = "<group>";
+		};
 		32886AEB25CE109C00B0AF8E /* WatchCookieKeeper */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,31 +266,17 @@
 		32928B6425C43FD400228A4E /* CookieKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				32312FD22620DA3200462A67 /* View */,
+				32312FCB2620D9EB00462A67 /* Controller */,
+				32312FC42620D98400462A67 /* Model */,
 				323F619625F96CD40073DC62 /* Helper.swift */,
-				32928B7925C4405200228A4E /* Cookie.swift */,
 				323F619125F9655F0073DC62 /* cookies.json */,
-				32928B7D25C440CC00228A4E /* Order.swift */,
 				3200A21925C78A6A00F0D78D /* FileDataManager.swift */,
-				3200A21325C7024300F0D78D /* DBController.swift */,
-				32D2125425C8793A003A91D9 /* CustomerController.swift */,
-				32928B8D25C45A6000228A4E /* OrderDetails.swift */,
-				32928B9025C46C0A00228A4E /* OrderListView.swift */,
-				32928B9325C4702D00228A4E /* OrderRowView.swift */,
-				32D2125925C8BB41003A91D9 /* OrderEditView.swift */,
-				321BAA9925CD85380028B539 /* CookieRowView.swift */,
-				327AD0A025CEFBBD000C7E80 /* CookieListView.swift */,
-				32928B8425C4429700228A4E /* CustomerEntry.swift */,
-				32928B8725C447AA00228A4E /* CustomerRowView.swift */,
-				32928B8A25C44D7000228A4E /* CustomerListView.swift */,
-				32928B7525C43FF700228A4E /* Customer.swift */,
-				3200A21625C7869600F0D78D /* CustomerExtension.swift */,
-				32A0DBDE25F5A2A200B772C0 /* DataController.swift */,
 				32928B6525C43FD400228A4E /* CookieKeeperApp.swift */,
 				32928B6725C43FD400228A4E /* ContentView.swift */,
 				32928B6925C43FD700228A4E /* Assets.xcassets */,
 				32928B6E25C43FD700228A4E /* Info.plist */,
 				32928B6B25C43FD700228A4E /* Preview Content */,
-				32646336260130F400890475 /* OrderController.swift */,
 			);
 			path = CookieKeeper;
 			sourceTree = "<group>";
@@ -389,6 +443,7 @@
 				32928B9125C46C0A00228A4E /* OrderListView.swift in Sources */,
 				32928B8825C447AA00228A4E /* CustomerRowView.swift in Sources */,
 				32928B9425C4702D00228A4E /* OrderRowView.swift in Sources */,
+				3245DF35261E450000810E6A /* PDFView.swift in Sources */,
 				32A0DBDF25F5A2A200B772C0 /* DataController.swift in Sources */,
 				32928B8525C4429700228A4E /* CustomerEntry.swift in Sources */,
 				32928B8E25C45A6000228A4E /* OrderDetails.swift in Sources */,
@@ -396,6 +451,7 @@
 				32928B6625C43FD400228A4E /* CookieKeeperApp.swift in Sources */,
 				3200A21425C7024300F0D78D /* DBController.swift in Sources */,
 				3200A21725C7869600F0D78D /* CustomerExtension.swift in Sources */,
+				3245DF30261E43F700810E6A /* PDFCreator.swift in Sources */,
 				32D2125525C8793A003A91D9 /* CustomerController.swift in Sources */,
 				321BAA9A25CD85380028B539 /* CookieRowView.swift in Sources */,
 			);

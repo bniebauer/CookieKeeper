@@ -10,25 +10,37 @@ import SwiftUI
 struct CustomerListView: View {
     @EnvironmentObject var dataController: DataController
     @State private var isPresented = false
-    @State private var data: Customer = Customer()
+    @State var customers: [Customer]
+    @State var newCustomer: Customer
+    
+    init() {
+        newCustomer = Customer()
+        self.customers = CustomerDataManager.LoadFromFile() as! [Customer]
+    }
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(dataController.customers) { customer in
+                ForEach(customers.indices, id: \.self) { index in
+                    let customer = Binding(get: {
+                        return self.customers[index]
+                    }, set: {
+                        self.customers[index] = $0
+                    })
+                    
                     NavigationLink(
-                        destination: CustomerEntry(customer: binding(for: customer)),
+                        destination: CustomerEntry(customer: customer, isShowing: $isPresented),
                         label: {
-                            CustomerRowView(customer: customer)
+                            CustomerRowView(customer: $newCustomer)
                         })
                     
                 }
             }
-            .navigationTitle("List of Customers")
+            .navigationTitle("Customers")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         isPresented = true
-                        data = Customer()
                     }, label: {
                         Image(systemName: "plus")
                     })
@@ -36,7 +48,7 @@ struct CustomerListView: View {
             }
             .fullScreenCover(isPresented: $isPresented) {
                 NavigationView {
-                    CustomerEntry(customer: $data)
+                    CustomerEntry(customer: $newCustomer, isShowing: $isPresented)
                         .navigationTitle("New Customer")
                         .toolbar {
                             ToolbarItem(placement: .navigationBarLeading) {
@@ -46,7 +58,6 @@ struct CustomerListView: View {
                             }
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 Button("Done") {
-                                    let newCustomer = Customer(id: dataController.customers.count+1, firstName: data.firstName, lastName: data.lastName, street: "", city: "", state: "", zip: "", phoneNumber: data.phoneNumber, email: data.email)
                                     dataController.customers.append(newCustomer)
                                     isPresented = false
                                 }
@@ -71,5 +82,6 @@ struct CustomerListView_Previews: PreviewProvider {
         Customer(id: 2, firstName: "Kelsey", lastName: "Niebauer", phoneNumber: "724-713-7570", email: "niebauer.kelseyj@me.com") ]
     static var previews: some View {
         CustomerListView()
+            .environmentObject(DataController())
     }
 }
